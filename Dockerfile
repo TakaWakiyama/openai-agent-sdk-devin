@@ -16,4 +16,4 @@ WORKDIR /app
 
 # Cloud Runはポート8080を使用
 ENV PORT 8080
-CMD ["python", "main.py"] 
+CMD ["python", "main.py"]
