@@ -21,7 +21,9 @@ def run_codex_and_create_pr(repo, instruction, github_token, openai_api_key):
     repo_path = os.path.join(work_dir, "repo")
     env = os.environ.copy()
     env["OPENAI_API_KEY"] = openai_api_key
+    # Use Codex CLI to apply full-auto fix based on the instruction
     codex_cmd = ["codex", "--full-auto", instruction]
+
     try:
         result = subprocess.run(
             codex_cmd, cwd=repo_path, env=env,
